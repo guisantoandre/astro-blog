@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+@theme {
+   /* CUSTOM FONTS */
+   --font-sans: "Fira Sans", sans-serif;
+   --font-display: "Orbitron", sans-serif;
+
+   /* CUSTOM COLORS */
+   --color-azul-900: #090b11;
+   --color-azul-800: #0e121a;
+   --color-azul-700: #202a3d;
+   --color-verde-700: #479e63;
+   --color-verde-500: #5ede87;
+   --color-verde-400: #84f0a7;
+}
+
+/* CUSTOM CLASSES */
+.bg-gradient {
+   @apply bg-linear-to-r from-verde-500 to-verde-400 text-azul-900;
+}

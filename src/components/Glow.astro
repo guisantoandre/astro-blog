@@ -1,0 +1,20 @@
+---
+interface Props {
+   color?: string;
+   opacity?: number;
+   class?: string;
+}
+
+const {
+   color = "#575E6E",
+   opacity = "0.12",
+   class: className = "",
+} = Astro.props;
+---
+
+<div
+   class={`absolute pointer-events-none blur-2xl ${className}`}
+   style={`background: radial-gradient(ellipse at center, ${color} 12%, transparent 70%);
+          opacity: ${opacity};`}
+>
+</div>
