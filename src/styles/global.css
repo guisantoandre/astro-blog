@@ -16,6 +16,17 @@
 }
 
 /* CUSTOM CLASSES */
-.bg-gradient {
-   @apply bg-linear-to-r from-verde-500 to-verde-400 text-azul-900;
+@utility bg-gradient {
+   background: linear-gradient(
+      to right,
+      var(--color-verde-500),
+      var(--color-verde-400)
+   );
+   color: var(--color-azul-900);
+}
+
+@utility container {
+   margin: 0 auto;
+   max-width: 1200px;
+   padding: 0 1rem;
 }
