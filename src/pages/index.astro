@@ -17,7 +17,7 @@ import HeroImg from "../assets/images/ui/hero-img.png";
       <title>Astroblog | Notícias e artigos sobre tecnologia</title>
    </head>
    <body
-      class="bg-azul-900 text-white font-sans flex flex-col min-h-screen overflow-x-hidden"
+      class="bg-azul-900 text-white font-sans overflow-hidden"
    >
       <header class="flex items-center justify-between py-10 container">
          <Glow class="-top-32 left-1/3 -translate-x-1/2 w-250 h-100" />
@@ -26,10 +26,10 @@ import HeroImg from "../assets/images/ui/hero-img.png";
          <Navbar />
       </header>
 
-      <section class="container flex items-center justify-between flex-1">
+      <section class="container flex items-center justify-between pt-10">
          <div class="space-y-4">
             <h2
-               class="text-5xl font-semibold font-display leading-snug before:block before:w-20 before:h-0.5 before:bg-gradient before:mb-1 hover:before:w-28 before:duration-100"
+               class="text-5xl font-semibold font-display leading-tight before:block before:w-20 before:h-0.5 before:bg-gradient before:mb-1 hover:before:w-28 before:duration-100"
             >
                Porque cada bit importa
             </h2>
@@ -40,9 +40,14 @@ import HeroImg from "../assets/images/ui/hero-img.png";
             <BtnCta title="Explorar" class="mt-12" />
          </div>
 
-         <div class="self-end translate-x-12">
-            <Image src={HeroImg} alt="Astroblog Hero Image" />
+         <div class="self-end">
+            <img src="/polygon.svg" alt="Polígono de fundo" class="absolute -z-10 -translate-y-10 animate-spin [animation-duration:60s]">
+            <Image src={HeroImg} alt="Astroblog Hero Image" class="translate-x-12" />
          </div>
       </section>
+
+      <main class="bg-azul-800">
+         <h1>Posts</h1>
+      </main>
    </body>
 </html>
