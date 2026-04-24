@@ -30,3 +30,8 @@
    max-width: 1150px;
    padding: 0 1rem;
 }
+
+@utility text-title {
+   @apply font-display font-semibold leading-tight; /* Estilos */
+   @apply text-3xl md:text-5xl; /* Tamanhos */
+}
