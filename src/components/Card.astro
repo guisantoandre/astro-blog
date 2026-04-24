@@ -1,51 +1,58 @@
 ---
 import { Image } from "astro:assets";
+import type { Post } from "../data/posts";
+
+interface Props {
+   post: Post;
+}
+
 const { post } = Astro.props;
 ---
 
 <article
-   class="relative flex flex-col bg-azul-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-azul-500/30 transition-all duration-300 group hover:bg-azul-900/60"
+   class="relative group flex flex-col p-8 bg-azul-900 rounded-xl border-2 border-azul-700/50 hover:border-azul-700/100 hover:-translate-y-2 transition-transform duration-300"
 >
-   <div class="relative overflow-hidden h-52">
+   <div class="overflow-hidden rounded-md mb-2">
       <Image
          src={post.image}
          alt={post.title}
-         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+         class="object-cover group-hover:scale-105 duration-150"
+         width={550}
+         height={360}
       />
    </div>
 
-   <div class="p-7 flex flex-col flex-1">
-      <header>
-         <span
-            class="text-[10px] tracking-[0.2em] font-bold text-azul-400 uppercase"
-         >
-            {post.tags.join(" — ")}
-         </span>
-
-         <h3
-            class="text-2xl font-semibold mt-2 leading-tight group-hover:text-azul-300 transition-colors"
-         >
-            <a
-               href={`/article/${post.slug}`}
-               class="after:absolute after:inset-0"
+   <div class="flex flex-col space-y-6 flex-1">
+      <div class="flex-1">
+         <header>
+            <span class="text-sm font-light text-white/50 uppercase">
+               {post.tags.join(" — ")}
+            </span>
+            <h3
+               class="text-lg font-semibold font-display leading-relaxed tracking-wide my-2 group-hover:text-azul-300 transition-colors"
             >
-               {post.title}
-            </a>
-         </h3>
-      </header>
+               <a
+                  href={`/article/${post.slug}`}
+                  class="after:absolute after:inset-0"
+               >
+                  {post.title}
+               </a>
+            </h3>
+         </header>
+         <p class="text-white/60 line-clamp-3 text-balance">
+            {post.description}
+         </p>
+      </div>
 
-      <p class="text-white/60 mt-4 line-clamp-3 text-sm leading-relaxed">
-         {post.description}
-      </p>
-
-      <footer
-         class="mt-auto pt-6 flex items-center justify-between border-t border-white/5"
-      >
-         <span class="text-xs text-white/30 font-mono">{post.date}</span>
+      <footer class="flex items-center justify-between">
          <span
-            class="text-xs font-bold uppercase tracking-widest text-white group-hover:text-azul-400 transition-colors"
+            class="text-sm text-white/50 group-hover:text-white/100 duration-100"
+            >{post.date}</span
          >
-            Ler artigo →
+         <span
+            class="font-serif text-white/50 group-hover:text-white/100 duration-100"
+         >
+            →
          </span>
       </footer>
    </div>

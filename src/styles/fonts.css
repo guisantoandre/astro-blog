@@ -1,22 +1,22 @@
 @font-face {
-   font-family: "Fira Sans";
-   src: url("/fonts/FiraSans-Light.ttf") format("truetype");
+   font-family: "Barlow";
+   src: url("/fonts/Barlow-Light.ttf") format("truetype");
    font-weight: 300;
    font-style: normal;
    font-display: swap;
 }
 
 @font-face {
-   font-family: "Fira Sans";
-   src: url("/fonts/FiraSans-Regular.ttf") format("truetype");
+   font-family: "Barlow";
+   src: url("/fonts/Barlow-Regular.ttf") format("truetype");
    font-weight: 400;
    font-style: normal;
    font-display: swap;
 }
 
 @font-face {
-   font-family: "Fira Sans";
-   src: url("/fonts/FiraSans-SemiBold.ttf") format("truetype");
+   font-family: "Barlow";
+   src: url("/fonts/Barlow-SemiBold.ttf") format("truetype");
    font-weight: 600;
    font-style: normal;
    font-display: swap;
