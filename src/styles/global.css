@@ -32,6 +32,6 @@
 }
 
 @utility text-title {
-   @apply font-display font-semibold leading-tight; /* Estilos */
+   @apply font-display font-semibold leading-tight tracking-wide; /* Estilos */
    @apply text-3xl md:text-5xl; /* Tamanhos */
 }

@@ -1,0 +1,38 @@
+---
+import BtnCta from "./BtnCta.astro";
+import Glow from "./Glow.astro";
+import { Image } from "astro:assets";
+import HeroImg from "../assets/images/ui/hero-img.png";
+---
+
+<section
+   class="relative container pt-10 md:pt-6 flex flex-col md:flex-row items-center md:justify-between"
+>
+   <div class="space-y-2 pb-10 md:pb-14 text-center md:text-left md:basis-3/5">
+      <Glow class="left-1/2 -translate-x-1/2 w-250 h-100" />
+      <h2
+         class="text-title before:block before:mx-auto md:before:mx-0 before:w-20 before:h-0.5 before:bg-gradient before:mb-1 hover:before:w-28 before:duration-100"
+      >
+         Porque cada bit importa
+      </h2>
+      <p class="text-lg text-white/80 max-w-2xl">
+         Acompanhe os movimentos que moldam o futuro através de artigos curtos e
+         precisos, escritos para mentes curiosas que buscam entender as
+         transformações do nosso tempo em cada detalhe.
+      </p>
+      <BtnCta title="Explorar" class="mt-7 md:mt-10" />
+   </div>
+
+   <div class="md:basis-2/5 md:self-end">
+      <img
+         src="/polygon.svg"
+         alt="Polígono de fundo"
+         class="absolute -z-10 w-110 md:w-150 md:-translate-y-4 md:-translate-x-10 animate-spin [animation-duration:60s]"
+      />
+      <Image
+         src={HeroImg}
+         alt="Astroblog Hero Image"
+         class="mx-auto w-1/2 md:w-full md:translate-x-5"
+      />
+   </div>
+</section>
