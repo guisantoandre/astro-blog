@@ -1,0 +1,20 @@
+---
+import "../../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../constants";
+
+const { title = SITE_TITLE } = Astro.props;
+---
+
+<html lang="pt-BR">
+   <head>
+      <meta charset="utf-8" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" href="/favicon.ico" />
+      <meta name="viewport" content="width=device-width" />
+      <meta name="description" content={SITE_DESCRIPTION} />
+      <title>{`${title} | ${SITE_DESCRIPTION}`}</title>
+   </head>
+   <body class="bg-azul-900 text-white font-sans overflow-x-hidden">
+      <slot />
+   </body>
+</html>
