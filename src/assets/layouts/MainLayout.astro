@@ -2,7 +2,17 @@
 import "../../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../constants";
 
-const { title = SITE_TITLE } = Astro.props;
+interface Props {
+   title?: string;
+   bgColor?: "bg-azul-700";
+   class?: string;
+}
+
+const {
+   title = SITE_TITLE,
+   bgColor = "bg-azul-900",
+   class: className,
+} = Astro.props;
 ---
 
 <html lang="pt-BR">
@@ -14,7 +24,9 @@ const { title = SITE_TITLE } = Astro.props;
       <meta name="description" content={SITE_DESCRIPTION} />
       <title>{`${title} | ${SITE_DESCRIPTION}`}</title>
    </head>
-   <body class="bg-azul-900 text-white font-sans overflow-x-hidden">
+   <body
+      class={`${bgColor} text-white font-sans overflow-x-hidden ${className}`}
+   >
       <slot />
    </body>
 </html>

@@ -1,8 +1,15 @@
 ---
-const { title, class: className } = Astro.props;
+interface Props {
+   title: string;
+   class?: string;
+   href: string;
+}
+
+const { title, class: className, href } = Astro.props;
 ---
 
 <a
-   class={`bg-gradient inline-block px-12 py-2 uppercase font-semibold rounded-md border-2 border-verde-700 hover:-translate-y-1 duration-100 cursor-pointer ${className}`}
+   href={href}
+   class={`bg-gradient inline-block px-12 py-2 uppercase font-semibold rounded-md border-2 border-verde-700 hover:border-verde-400 hover:-translate-y-1 duration-100 cursor-pointer ${className}`}
    >{title}
 </a>
