@@ -2,7 +2,7 @@
 title: "Chips cada vez mais inteligentes"
 description: "Os chips modernos já não se limitam a processar dados — eles começam a tomar decisões em tempo real. Com IA embarcada e maior eficiência energética, o hardware está se tornando tão dinâmico quanto o software."
 pubDate: "2026-04-19"
-tags: ["TECH", "ELETRONICA"]
+tags: ["tech", "eletronica"]
 image: "../../assets/images/posts/chip.png"
 slug: "chips-cada-vez-mais-inteligentes"
 ---

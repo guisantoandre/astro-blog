@@ -2,7 +2,7 @@
 title: "A web mais rápida"
 description: "Novas abordagens como rendering híbrido e otimização extrema de assets estão transformando a experiência online. A busca pela latência zero nunca foi tão importante para o mercado."
 pubDate: "2026-04-15"
-tags: ["TECH", "CODE"]
+tags: ["tech", "code"]
 image: "../../assets/images/posts/code-web.png"
 slug: "a-web-mais-rapida"
 ---

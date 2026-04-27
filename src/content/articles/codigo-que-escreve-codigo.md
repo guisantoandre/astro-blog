@@ -2,7 +2,7 @@
 title: "Código que escreve código"
 description: "Ferramentas de IA já conseguem gerar funções inteiras a partir de poucas instruções. Isso acelera o desenvolvimento, mas também levanta uma questão: qual será o papel do programador humano amanhã?"
 pubDate: "2026-02-23"
-tags: ["IA"]
+tags: ["ia"]
 image: "../../assets/images/posts/ia.png"
 slug: "codigo-que-escreve-codigo"
 ---
