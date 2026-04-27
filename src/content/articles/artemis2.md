@@ -1,7 +1,7 @@
 ---
 title: "Artemis II: o retorno ao espaço profundo"
 description: "A missão que marca o retorno da humanidade além da órbita terrestre e prepara o caminho para a Lua novamente."
-pubDate: "23/04/26"
+pubDate: "2026-04-23"
 tags: ["space", "tech"]
 image: "../../assets/images/posts/artemis2.png"
 ---

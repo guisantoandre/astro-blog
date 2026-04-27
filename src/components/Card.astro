@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { formatDate } from "../utils";
 
 interface Props {
    post: CollectionEntry<"articles">;
@@ -57,7 +58,7 @@ const { title, description, pubDate, tags, image } = post.data;
 
       <footer class="flex items-center justify-between">
          <span class="text-sm text-white/50 group-hover:text-white duration-100"
-            >{pubDate}</span
+            >{formatDate(pubDate)}</span
          >
          <span
             class="font-serif text-white/50 -translate-x-1 group-hover:translate-x-0 group-hover:text-white duration-100"

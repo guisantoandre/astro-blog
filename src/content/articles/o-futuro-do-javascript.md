@@ -1,7 +1,7 @@
 ---
 title: "O futuro do JavaScript"
 description: "O JavaScript continua evoluindo rapidamente, com novas features surgindo a cada versão. Mas será que estamos caminhando para um ecossistema mais simples ou ainda mais fragmentado? Analisamos as propostas do TC39."
-pubDate: "2026-01-01"
+pubDate: "2025-12-02"
 tags: ["code"]
 image: "../../assets/images/posts/js-code.png"
 slug: "o-futuro-do-javascrtip"

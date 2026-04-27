@@ -34,5 +34,5 @@
 @utility text-title {
    @apply font-display font-semibold leading-tight tracking-wide; /* Estilos */
    @apply text-3xl md:text-5xl; /* Tamanhos */
-   @apply pt-14 mb-8 md:pt-20 md:mb-12; /* Espacamentos */
+   @apply pt-10 mb-8 md:pt-16 md:mb-12; /* Espacamentos */
 }
