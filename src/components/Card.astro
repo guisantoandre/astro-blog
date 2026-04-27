@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import type { Post } from "../data/posts";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-   post: Post;
+   post: CollectionEntry<"articles">;
 }
 
 const { post } = Astro.props;
+const { title, description, pubDate, tags, image } = post.data;
 ---
 
 <article
@@ -14,8 +15,8 @@ const { post } = Astro.props;
 >
    <div class="overflow-hidden rounded-md mb-2">
       <Image
-         src={post.image}
-         alt={post.title}
+         src={image}
+         alt={title}
          class="object-cover group-hover:scale-105 duration-150"
          width={550}
          height={360}
@@ -26,27 +27,28 @@ const { post } = Astro.props;
       <div class="flex-1">
          <header>
             <span class="text-sm font-light text-white/50 uppercase">
-               {post.tags.join(" — ")}
+               {tags.join(" — ")}
             </span>
             <h3
                class="text-lg font-semibold font-display leading-relaxed tracking-wide my-2 group-hover:text-azul-300 transition-colors"
             >
+               <!-- ex: post.id = "articles/1.md"  -->
                <a
-                  href={`/article/${post.slug}`}
+                  href={`${post.id.replace("articles/", "").replace(".md", "")}`}
                   class="after:absolute after:inset-0"
                >
-                  {post.title}
+                  {title}
                </a>
             </h3>
          </header>
          <p class="text-white/60 line-clamp-3 text-balance">
-            {post.description}
+            {description}
          </p>
       </div>
 
       <footer class="flex items-center justify-between">
          <span class="text-sm text-white/50 group-hover:text-white duration-100"
-            >{post.date}</span
+            >{pubDate}</span
          >
          <span
             class="font-serif text-white/50 -translate-x-1 group-hover:translate-x-0 group-hover:text-white duration-100"
