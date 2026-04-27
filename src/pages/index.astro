@@ -1,27 +1,23 @@
 ---
 import MainLayout from "../assets/layouts/MainLayout.astro";
 import Cards from "../components/Cards.astro";
-import Header from "../components/Header.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <MainLayout>
-   <!-- HEADER COMPONENT -->
-   <Header />
-
    <!-- HERO SECTION -->
    <HeroSection />
 
    <!-- POSTS SECTION -->
-   <main class="bg-azul-800 rounded-tl-4xl rounded-tr-4xl min-h-80">
-      <h1 class="text-title text-center pt-14 mb-8 md:pt-20 md:mb-12">Posts</h1>
+   <main class="bg-azul-800 rounded-tl-4xl rounded-tr-4xl">
+      <h1 class="text-title text-center">Posts</h1>
 
       <Cards />
 
       <div class="text-center">
          <a
-            href="#"
+            href="/articles"
             class="inline-block font-semibold text-sm tracking-wide uppercase my-4 p-4 text-white/60 hover:text-white duration-100"
             >Ler mais...
          </a>

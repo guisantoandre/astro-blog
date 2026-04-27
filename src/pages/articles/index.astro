@@ -1,1 +1,13 @@
-<h2>Artigos</h2>
+---
+import MainLayout from "../../assets/layouts/MainLayout.astro";
+import Cards from "../../components/Cards.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<MainLayout bgColor="bg-azul-800">
+   <h1 class="font-display text-title text-center">Blog</h1>
+
+   <Cards />
+
+   <Footer />
+</MainLayout>

@@ -1,10 +1,11 @@
 ---
 import "../../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../constants";
+import Header from "../../components/Header.astro";
 
 interface Props {
    title?: string;
-   bgColor?: "bg-azul-700";
+   bgColor?: "bg-azul-700" | "bg-azul-800";
    class?: string;
 }
 
@@ -27,6 +28,7 @@ const {
    <body
       class={`${bgColor} text-white font-sans overflow-x-hidden ${className}`}
    >
+      <Header />
       <slot />
    </body>
 </html>
