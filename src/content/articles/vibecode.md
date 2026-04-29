@@ -1,7 +1,7 @@
 ---
 title: "Vibecode: código além da lógica"
 description: "Uma nova forma de pensar software surge combinando estética, intenção e experiência. Entenda o conceito de Vibecode."
-pubDate: "2026-03-14"
+pubDate: 2026-03-14
 tags: ["code", "design"]
 image: "../../assets/images/posts/vibecode.png"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "O futuro das redes sociais"
 description: "De espaços de conexão a plataformas de consumo: como as redes sociais se transformaram e o que esperar do futuro."
-pubDate: "2026-04-25"
+pubDate: 2026-04-25
 tags: ["tech", "social"]
 image: "../../assets/images/posts/redes-sociais.png"
 ---

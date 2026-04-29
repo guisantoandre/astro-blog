@@ -2,15 +2,16 @@
 import Card from "./Card.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { sortByDate } from "../utils";
 
 const allBlogArticles: CollectionEntry<"articles">[] =
    await getCollection("articles");
 
-console.log(allBlogArticles.length);
+const allBlogArticlesSortedByDate = sortByDate(allBlogArticles);
 ---
 
 <div
    class="container grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 mb-10"
 >
-   {allBlogArticles.map((article) => <Card post={article} />)}
+   {allBlogArticlesSortedByDate.map((article) => <Card post={article} />)}
 </div>

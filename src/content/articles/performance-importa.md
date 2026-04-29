@@ -1,7 +1,7 @@
 ---
 title: "Performance importa"
 description: "Um site rápido não é só agradável — ele impacta diretamente SEO, conversão e retenção de usuários. Pequenos detalhes no carregamento de assets fazem toda a diferença no faturamento final."
-pubDate: "2026-01-01"
+pubDate: 2026-01-01
 tags: ["web"]
 image: "../../assets/images/posts/laptop.png"
 slug: "performance-importa"

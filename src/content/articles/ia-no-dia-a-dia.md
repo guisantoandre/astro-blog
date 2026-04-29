@@ -1,7 +1,7 @@
 ---
 title: "IA no dia a dia"
 description: "A inteligência artificial já não é mais coisa do futuro. De recomendações em apps até automações complexas, ela está moldando como vivemos — muitas vezes sem percebermos sua presença silenciosa."
-pubDate: "2026-03-05"
+pubDate: 2026-03-05
 tags: ["ia"]
 image: "../../assets/images/posts/ia-brain.png"
 slug: "ia-no-dia-a-dia"
