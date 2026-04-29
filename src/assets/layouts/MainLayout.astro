@@ -7,12 +7,14 @@ interface Props {
    title?: string;
    bgColor?: "bg-azul-700" | "bg-azul-800";
    class?: string;
+   hasHeader?: boolean;
 }
 
 const {
    title = SITE_TITLE,
    bgColor = "bg-azul-900",
    class: className,
+   hasHeader = true,
 } = Astro.props;
 ---
 
@@ -28,7 +30,7 @@ const {
    <body
       class={`${bgColor} text-white font-sans overflow-x-hidden ${className}`}
    >
-      <Header />
+      {hasHeader && <Header />}
       <slot />
    </body>
 </html>
