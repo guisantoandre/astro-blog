@@ -1,8 +1,14 @@
 ---
-import Card from "./Card.astro";
+import ArticleCard from "./ArticleCard.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { sortByDate } from "../utils";
+
+interface Props {
+   articlesPerPage?: number;
+}
+
+const { articlesPerPage = 6 } = Astro.props;
 
 const allBlogArticles: CollectionEntry<"articles">[] =
    await getCollection("articles");
@@ -13,5 +19,9 @@ const allBlogArticlesSortedByDate = sortByDate(allBlogArticles);
 <div
    class="container grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 mb-10"
 >
-   {allBlogArticlesSortedByDate.map((article) => <Card post={article} />)}
+   {
+      allBlogArticlesSortedByDate
+         .slice(0, articlesPerPage)
+         .map((article) => <ArticleCard post={article} />)
+   }
 </div>
