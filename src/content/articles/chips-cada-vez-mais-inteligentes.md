@@ -15,6 +15,5 @@ Essa mudança traz vantagens claras. A primeira é a redução de latência: ao 
 
 Empresas de tecnologia já estão investindo fortemente nesse tipo de arquitetura. Processadores com unidades dedicadas para IA, como NPUs (Neural Processing Units), estão se tornando cada vez mais comuns em smartphones, laptops e até dispositivos IoT. Isso indica uma mudança estrutural na forma como o software e o hardware se relacionam.
 
-No futuro, é provável que vejamos uma descentralização ainda maior do processamento. Em vez de depender de grandes data centers para tudo, parte significativa das decisões será tomada diretamente nos dispositivos que usamos diariamente. Isso não apenas melhora a performance, mas também redefine o papel da computação na nossa rotina.
-
+No futuro, é provável que vejamos uma descentralização ainda maior do processamento. Em vez de depender de grandes data centers para tudo, parte significativa das decisões será tomada diretamente nos dispositivos que usamos diariamente. Isso não apenas melhora a performance, mas também redefine o papel da computação na nossa rotina. <br />
 Os chips estão deixando de ser apenas ferramentas passivas e começando a atuar como agentes ativos dentro dos sistemas. E essa mudança, embora silenciosa, pode ser uma das mais impactantes da tecnologia moderna.

@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Tag from "../../components/Tag.astro";
 import { formatDate } from "../../utils";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
    const posts = await getCollection("articles");
@@ -22,28 +23,30 @@ const { Content } = await render(post);
 ---
 
 <MainLayout bgColor="bg-azul-700">
-   <article class="container space-y-4">
-      <div class="space-y-2">
-         <h1 class="font-display text-3xl tracking-wide">{title}</h1>
-         <span class="text-white/80 font-light block"
-            >{formatDate(pubDate)}</span
-         >
-         <Tag tags={tags} bgColor="bg-azul-800" />
-      </div>
-
-      <div>
-         <Content />
-      </div>
-   </article>
+   <div class="flex flex-col min-h-[calc(100vh-110px)]">
+      <article class="container space-y-4 flex-1">
+         <div class="space-y-2">
+            <h1 class="font-display text-3xl tracking-wide">{title}</h1>
+            <span class="text-white/80 font-light block"
+               >{formatDate(pubDate)}</span
+            >
+            <Tag tags={tags} bgColor="bg-azul-800" />
+         </div>
+         <div class="pb-7 contentStyle">
+            <Content />
+         </div>
+      </article>
+      <Footer />
+   </div>
 </MainLayout>
 
 <style is:global>
-   h2 {
+   .contentStyle h2 {
       font-weight: 600;
    }
 
-   p {
+   .contentStyle p {
+      margin-bottom: 12px;
       opacity: 0.8;
-      margin-bottom: 1rem;
    }
 </style>
