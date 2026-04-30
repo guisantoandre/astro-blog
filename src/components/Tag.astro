@@ -1,9 +1,10 @@
 ---
 interface Props {
    tags: string[];
+   bgColor: "bg-azul-700" | "bg-azul-800";
 }
 
-const { tags } = Astro.props;
+const { tags, bgColor } = Astro.props;
 ---
 
 {
@@ -11,7 +12,7 @@ const { tags } = Astro.props;
       <span>
          <a
             href={`/articles/tag/${tag}`}
-            class="relative z-10 inline-block text-sm font-light text-white border border-gray-600 opacity-50 hover:opacity-100 duration-100 uppercase py-1 px-3 mr-2 rounded-full"
+            class={`relative z-10 inline-block text-sm font-light ${bgColor} text-white border border-gray-700 opacity-40 hover:opacity-100 duration-100 uppercase py-1 px-3 mr-2 rounded-full`}
          >
             {tag}
          </a>
