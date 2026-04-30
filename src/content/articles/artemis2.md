@@ -9,13 +9,11 @@ image: "../../assets/images/posts/artemis2.png"
 ## Um novo capítulo da exploração
 
 A missão :contentReference[oaicite:0]{index=0} marca o retorno da humanidade ao espaço profundo após mais de cinco décadas. Diferente das missões recentes, que se limitaram à órbita baixa da Terra, essa jornada leva astronautas novamente à vizinhança da Lua.
-
 Mais do que um feito simbólico, trata-se de um teste essencial. A missão valida tecnologias, sistemas de suporte à vida e comunicação em um ambiente muito mais hostil e distante.
 
 ## Uma viagem sem pouso, mas cheia de significado
 
-Ao contrário do que muitos imaginam, a Artemis II não pousa na Lua. Ela realiza um sobrevoo em trajetória de retorno livre, contornando o satélite e voltando à Terra. Esse tipo de trajetória garante segurança adicional, já que a própria gravidade ajuda no retorno da nave :contentReference[oaicite:1]{index=1}.
-
+Ao contrário do que muitos imaginam, a Artemis II não pousa na Lua. Ela realiza um sobrevoo em trajetória de retorno livre, contornando o satélite e voltando à Terra. Esse tipo de trajetória garante segurança adicional, já que a própria gravidade ajuda no retorno da nave.
 Apesar de parecer simples, esse tipo de missão é extremamente complexo. Cada sistema é testado em condições reais, algo impossível de simular completamente na Terra.
 
 ## Tecnologia e comunicação no limite
