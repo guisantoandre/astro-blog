@@ -3,6 +3,7 @@ import MainLayout from "../../../layouts/MainLayout.astro";
 import Cards from "../../../components/Cards.astro";
 import Footer from "../../../components/Footer.astro";
 import { getCollection } from "astro:content";
+import { captalize } from "../../../utils";
 
 export async function getStaticPaths() {
    const posts = await getCollection("articles");
@@ -21,7 +22,7 @@ export async function getStaticPaths() {
 
 <MainLayout bgColor="bg-azul-800">
    <h1 class="font-display text-title text-center">
-      #{Astro.props.tag.toUpperCase()}
+      #{captalize(Astro.props.tag)}
    </h1>
 
    <Cards posts={Astro.props.posts} />
