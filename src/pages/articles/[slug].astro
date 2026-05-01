@@ -4,6 +4,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Tag from "../../components/Tag.astro";
 import { formatDate } from "../../utils";
 import Footer from "../../components/Footer.astro";
+import Btn from "../../components/Btn.astro";
 
 export async function getStaticPaths() {
    const posts = await getCollection("articles");
@@ -25,11 +26,7 @@ const { Content } = await render(post);
 <MainLayout bgColor="bg-azul-700">
    <div class="flex flex-col min-h-[calc(100vh-110px)] mt-7">
       <article class="container space-y-5 flex-1">
-         <a
-            href="/articles"
-            class="inline-block bg-azul-800 hover:bg-azul-800/80 px-12 py-2 uppercase font-semibold rounded-md mb-10 duration-100"
-            >Voltar</a
-         >
+         <Btn title="Voltar" href="/articles" />
          <div class="space-y-2">
             <h1 class="font-display text-3xl tracking-wide">{title}</h1>
             <span class="text-white/50 block">{formatDate(pubDate)}</span>
