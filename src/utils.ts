@@ -1,4 +1,4 @@
-import type { CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export function formatDate(date: Date): string {
    return date.toLocaleDateString("pt-BR", {
@@ -15,4 +15,12 @@ export function sortByDate(articles: CollectionEntry<"articles">[]) {
          return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
       },
    );
+}
+
+export async function getAllArticles(): Promise<CollectionEntry<"articles">[]> {
+   const allArticles = (await getCollection(
+      "articles",
+   )) as CollectionEntry<"articles">[];
+
+   return sortByDate(allArticles);
 }

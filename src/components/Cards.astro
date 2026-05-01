@@ -1,8 +1,6 @@
 ---
+import { getAllArticles } from "../utils";
 import ArticleCard from "./ArticleCard.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
-import { sortByDate } from "../utils";
 
 interface Props {
    articlesPerPage?: number;
@@ -10,10 +8,7 @@ interface Props {
 
 const { articlesPerPage = 6 } = Astro.props;
 
-const allBlogArticles: CollectionEntry<"articles">[] =
-   await getCollection("articles");
-
-const allBlogArticlesSortedByDate = sortByDate(allBlogArticles);
+const allBlogArticlesSortedByDate = await getAllArticles();
 ---
 
 <div
