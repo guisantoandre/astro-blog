@@ -25,6 +25,6 @@ export async function getAllArticles(): Promise<CollectionEntry<"articles">[]> {
    return sortByDate(allArticles);
 }
 
-export function captalize(str: string): string {
-   return str.charAt(0).toUpperCase() + str.slice(1);
-}
+// export function captalize(str: string): string {
+//    return str.charAt(0).toUpperCase() + str.slice(1);
+// }
