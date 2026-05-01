@@ -1,0 +1,30 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import Cards from "../../../components/Cards.astro";
+import Footer from "../../../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+   const posts = await getCollection("articles");
+
+   const tags = [...new Set(posts.flatMap((post) => post.data.tags))]; // remove duplicates and convert to array
+
+   return tags.map((tag) => ({
+      params: { tag },
+      props: {
+         posts: posts.filter((post) => post.data.tags.includes(tag)), // filter posts by tag
+         tag,
+      },
+   }));
+}
+---
+
+<MainLayout bgColor="bg-azul-800">
+   <h1 class="font-display text-title text-center">
+      #{Astro.props.tag.toUpperCase()}
+   </h1>
+
+   <Cards posts={Astro.props.posts} />
+
+   <Footer />
+</MainLayout>
