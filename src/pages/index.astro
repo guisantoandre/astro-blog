@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Cards from "../components/Cards.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Footer from "../components/Footer.astro";
+import SearchForm from "../components/SearchForm.astro";
 ---
 
 <MainLayout>
@@ -12,6 +13,8 @@ import Footer from "../components/Footer.astro";
    <!-- POSTS SECTION -->
    <main class="bg-azul-800 rounded-tl-4xl rounded-tr-4xl">
       <h1 class="text-title text-center">Posts</h1>
+
+      <SearchForm />
 
       <Cards />
 
