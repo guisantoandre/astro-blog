@@ -1,7 +1,7 @@
 ---
 export const prerender = false;
-import Btn from "../../components/Btn.astro";
 import Cards from "../../components/Cards.astro";
+import SearchForm from "../../components/SearchForm.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getAllArticles } from "../../utils";
 import { searchResults } from "../../utils";
@@ -14,14 +14,11 @@ const allArticles = await getAllArticles();
 const results = searchResults(allArticles, query);
 ---
 
-<MainLayout>
+<MainLayout title={`Busca: ${query!}`}>
    <div class="container">
-      <Btn
-         title="Blog"
-         href="/articles"
-         class="bg-azul-700 hover:bg-azul-700/80 mt-5 md:mt-7"
-      />
       <h2 class="text-subtitle py-5 md:py-7">Resultados para: {query}</h2>
+
+      <SearchForm />
 
       <Cards posts={results} />
    </div>
