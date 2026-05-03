@@ -19,10 +19,10 @@ export async function getStaticPaths() {
 }
 ---
 
-<MainLayout bgColor="bg-azul-800">
-   <h1 class="font-display text-2xl tracking-wide py-8 md:py-10 text-center">
+<MainLayout bgColor="bg-azul-800" title={`#${Astro.props.tag}`}>
+   <h2 class="text-subtitle py-5 md:py-7">
       Artigos com a tag #{Astro.props.tag}
-   </h1>
+   </h2>
 
    <Cards posts={Astro.props.posts} />
 

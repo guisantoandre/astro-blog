@@ -1,14 +1,17 @@
 <form action="/articles/search" class="container mb-10">
    <div
-      class="flex w-full max-w-lg mx-auto rounded-xl overflow-auto border-2 border-azul-700/50"
+      class="flex w-full max-w-lg mx-auto rounded-xl overflow-auto border-2 border-azul-700"
    >
       <input
          type="text"
          name="query"
          placeholder="Procurar artigo..."
-         class="py-3 px-5 outline-none bg-azul-700/30 w-full placeholder:text-white/20"
+         class="py-3 px-5 outline-none bg-azul-700/30 focus:bg-azul-700/50 w-full placeholder:text-white/20"
       />
-      <button type="submit" class="bg-azul-900 px-7 shrink-0">
+      <button
+         type="submit"
+         class="bg-azul-700 hover:bg-azul-700/80 px-7 shrink-0 cursor-pointer duration-100"
+      >
          <img src="/search-icon.svg" alt="Search Icon" class="w-5" />
       </button>
    </div>

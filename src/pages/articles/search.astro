@@ -1,3 +1,28 @@
 ---
 export const prerender = false;
+import Btn from "../../components/Btn.astro";
+import Cards from "../../components/Cards.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getAllArticles } from "../../utils";
+import { searchResults } from "../../utils";
+
+const query: string | null = Astro.url.searchParams.get("query");
+
+const allArticles = await getAllArticles();
+
+// Filter articles based on query
+const results = searchResults(allArticles, query);
 ---
+
+<MainLayout>
+   <div class="container">
+      <Btn
+         title="Blog"
+         href="/articles"
+         class="bg-azul-700 hover:bg-azul-700/80 mt-5 md:mt-7"
+      />
+      <h2 class="text-subtitle py-5 md:py-7">Resultados para: {query}</h2>
+
+      <Cards posts={results} />
+   </div>
+</MainLayout>

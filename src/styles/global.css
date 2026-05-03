@@ -36,3 +36,8 @@
    @apply text-3xl md:text-5xl; /* Tamanhos */
    @apply py-5 md:py-10; /* Espacamentos */
 }
+
+@utility text-subtitle {
+   @apply font-display tracking-wide;
+   @apply text-2xl text-center;
+}

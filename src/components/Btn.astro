@@ -1,4 +1,6 @@
 ---
+import { twMerge } from "tailwind-merge";
+
 interface Props {
    title: string;
    href: string;
@@ -10,6 +12,8 @@ const { title, class: className, href } = Astro.props;
 
 <a
    href={href}
-   class={`inline-block bg-azul-800 hover:bg-azul-800/80 px-12 py-2 uppercase font-semibold rounded-md mb-10 duration-100 ${className}`}
-   >{title}</a
+   class={twMerge(
+      "inline-block bg-azul-800 hover:bg-azul-800/80 px-12 py-2 uppercase font-semibold rounded-md mb-7 duration-100",
+      className,
+   )}>{title}</a
 >
