@@ -1,3 +1,11 @@
+---
+interface Props {
+   query?: string | null;
+}
+
+const { query } = Astro.props;
+---
+
 <form action="/articles/search" class="container mb-10">
    <div
       class="flex w-full max-w-2xl mx-auto rounded-xl overflow-auto border-2 border-azul-700"
@@ -5,6 +13,8 @@
       <input
          type="text"
          name="query"
+         value={query?.trim() ?? ""}
+         required
          placeholder="Procurar artigo..."
          class="py-3 px-5 outline-none bg-azul-700/30 focus:bg-azul-700/50 w-full placeholder:text-white/20"
       />

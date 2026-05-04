@@ -30,14 +30,15 @@ export function searchResults(
    articles: CollectionEntry<"articles">[],
    query: string | null,
 ): CollectionEntry<"articles">[] {
-   if (!query) return articles;
+   if (!query?.trim()) return [];
 
-   const queryLower = query;
+   const queryLower = query.toLowerCase();
 
    return articles.filter((article) => {
       const titleMatch = article.data.title.toLowerCase().includes(queryLower);
 
-      const bodyMatch = article.body?.toLowerCase().includes(queryLower);
+      const bodyMatch =
+         article.body?.toLowerCase().includes(queryLower) ?? false;
 
       const tagMatch = article.data.tags.some((tag) =>
          tag.toLowerCase().includes(queryLower),
