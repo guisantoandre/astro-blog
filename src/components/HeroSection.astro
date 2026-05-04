@@ -3,6 +3,7 @@ import BtnCta from "./BtnCta.astro";
 import Glow from "./Glow.astro";
 import { Image } from "astro:assets";
 import HeroImg from "../assets/images/ui/hero-img.png";
+import { twMerge } from "tailwind-merge";
 ---
 
 <section
@@ -11,7 +12,9 @@ import HeroImg from "../assets/images/ui/hero-img.png";
    <div class="space-y-2 pb-10 md:pb-14 text-center md:text-left md:basis-3/5">
       <Glow class="left-1/2 -translate-x-1/2 w-250 h-100" />
       <h2
-         class="mb-5 text-title before:block before:mx-auto md:before:mx-0 before:w-20 before:h-0.5 before:bg-gradient before:mb-1 hover:before:w-28 before:duration-100"
+         class={twMerge(
+            `text-title py-2 before:block before:mx-auto md:before:mx-0 before:w-20 before:h-0.5 before:bg-gradient before:mb-1 hover:before:w-28 before:duration-100`,
+         )}
       >
          Porque cada bit importa
       </h2>

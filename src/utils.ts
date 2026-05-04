@@ -37,14 +37,15 @@ export function searchResults(
    return articles.filter((article) => {
       const titleMatch = article.data.title.toLowerCase().includes(queryLower);
 
-      const bodyMatch =
-         article.body?.toLowerCase().includes(queryLower) ?? false;
+      const descriptionMatch = article.data.description
+         .toLowerCase()
+         .includes(queryLower);
 
       const tagMatch = article.data.tags.some((tag) =>
          tag.toLowerCase().includes(queryLower),
       );
 
-      return titleMatch || bodyMatch || tagMatch;
+      return titleMatch || descriptionMatch || tagMatch;
    });
 }
 
