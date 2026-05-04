@@ -1,0 +1,22 @@
+---
+interface Props {
+   next: string | undefined;
+   prev: string | undefined;
+   current: number;
+   last: number;
+   basePath: string; // url base (ex: /articles)
+}
+
+const { next, prev, current, last, basePath } = Astro.props;
+
+// Generate array of page numbers
+const pageNumbers = Array.from({ length: last }, (_, i) => i + 1);
+---
+
+<nav>
+   <!-- Previous button -->
+
+   <!-- Page numbers -->
+
+   <!-- Next button -->
+</nav>
