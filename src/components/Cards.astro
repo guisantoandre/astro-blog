@@ -23,30 +23,3 @@ const displayPosts = articlesPerPage ? posts.slice(0, articlesPerPage) : posts;
 >
    {displayPosts.map((article) => <ArticleCard post={article} />)}
 </div>
-
-<!-- ---
-import type { CollectionEntry } from "astro:content";
-import { getAllArticles } from "../utils";
-import ArticleCard from "./ArticleCard.astro";
-
-interface Props {
-   articlesPerPage?: number;
-   posts?: CollectionEntry<"articles">[];
-}
-
-const { articlesPerPage = 6 } = Astro.props;
-
-const allBlogArticlesSortedByDate = await getAllArticles();
-
-const posts = Astro.props.posts ?? allBlogArticlesSortedByDate;
----
-
-<div
-   class="container grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6 mb-10"
->
-   {
-      posts
-         .slice(0, articlesPerPage)
-         .map((article) => <ArticleCard post={article} />)
-   }
-</div> -->

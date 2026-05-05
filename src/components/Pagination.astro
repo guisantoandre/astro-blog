@@ -1,7 +1,7 @@
 ---
 interface Props {
-   next: string | undefined;
    prev: string | undefined;
+   next: string | undefined;
    current: number;
    last: number;
    basePath: string; // url base (ex: /articles)
@@ -11,12 +11,55 @@ const { next, prev, current, last, basePath } = Astro.props;
 
 // Generate array of page numbers
 const pageNumbers = Array.from({ length: last }, (_, i) => i + 1);
+
+// Styles for previous and next buttons
+const arrowBaseClass =
+   "font-semibold uppercase px-10 py-2 rounded-md transition duration-150";
+const arrowActiveStyles = "bg-azul-700 text-white hover:bg-azul-700/80";
+const arrowDisabledStyles =
+   "bg-azul-700/20 text-white/20 cursor-not-allowed pointer-events-none";
 ---
 
-<nav>
+<nav class="container flex justify-between items-center gap-2 mb-10">
    <!-- Previous button -->
+   {
+      prev ? (
+         <a href={prev} class={`${arrowBaseClass} ${arrowActiveStyles}`}>
+            Anterior
+         </a>
+      ) : (
+         <span class={`${arrowBaseClass} ${arrowDisabledStyles}`}>
+            Anterior
+         </span>
+      )
+   }
 
    <!-- Page numbers -->
+   <div class="flex gap-2">
+      {
+         pageNumbers.map((num) => (
+            <a
+               href={`${basePath}/${num}`}
+               class={`px-4 py-1 rounded-md transition duration-150 ${
+                  current === num
+                     ? "bg-azul-700 text-white font-bold border-2 border-white/20 pointer-events-none"
+                     : "bg-azul-700/40 text-white/70 hover:bg-azul-700 hover:text-white"
+               }`}
+            >
+               {num}
+            </a>
+         ))
+      }
+   </div>
 
    <!-- Next button -->
+   {
+      next ? (
+         <a href={next} class={`${arrowBaseClass} ${arrowActiveStyles}`}>
+            Próximo
+         </a>
+      ) : (
+         <span class={`${arrowBaseClass} ${arrowDisabledStyles}`}>Próximo</span>
+      )
+   }
 </nav>
