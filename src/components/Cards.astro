@@ -8,6 +8,32 @@ interface Props {
    posts?: CollectionEntry<"articles">[];
 }
 
+const { articlesPerPage, posts: providedPosts } = Astro.props;
+
+// Só buscamos os artigos se 'posts' não for passado via props (ex: na Home)
+const posts = providedPosts ?? (await getAllArticles());
+
+// Se articlesPerPage for passado, cortamos o array.
+// Se não (como na paginação), usamos o array inteiro que já veio cortado pelo Astro.
+const displayPosts = articlesPerPage ? posts.slice(0, articlesPerPage) : posts;
+---
+
+<div
+   class="container grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6 mb-10"
+>
+   {displayPosts.map((article) => <ArticleCard post={article} />)}
+</div>
+
+<!-- ---
+import type { CollectionEntry } from "astro:content";
+import { getAllArticles } from "../utils";
+import ArticleCard from "./ArticleCard.astro";
+
+interface Props {
+   articlesPerPage?: number;
+   posts?: CollectionEntry<"articles">[];
+}
+
 const { articlesPerPage = 6 } = Astro.props;
 
 const allBlogArticlesSortedByDate = await getAllArticles();
@@ -23,4 +49,4 @@ const posts = Astro.props.posts ?? allBlogArticlesSortedByDate;
          .slice(0, articlesPerPage)
          .map((article) => <ArticleCard post={article} />)
    }
-</div>
+</div> -->
