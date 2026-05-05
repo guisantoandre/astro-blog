@@ -1,0 +1,26 @@
+---
+// src/pages/articles/[page].astro
+import { getAllArticles } from "../../utils";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Cards from "../../components/Cards.astro";
+import Footer from "../../components/Footer.astro";
+import SearchForm from "../../components/SearchForm.astro";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+   const allArticles = await getAllArticles();
+   return paginate(allArticles, { pageSize: 6 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<MainLayout bgColor="bg-azul-800" title="Blog">
+   <h1 class="font-display text-title text-center">Blog</h1>
+
+   <SearchForm />
+
+   <Cards posts={page.data} />
+
+   <Footer />
+</MainLayout>
