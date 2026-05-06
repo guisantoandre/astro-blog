@@ -24,11 +24,14 @@ const arrowDisabledStyles =
    <!-- Previous button -->
    {
       prev ? (
-         <a href={prev} class={`${arrowBaseClass} ${arrowActiveStyles}`}>
+         <a
+            href={prev}
+            class={`select-none ${arrowBaseClass} ${arrowActiveStyles}`}
+         >
             Anterior
          </a>
       ) : (
-         <span class={`${arrowBaseClass} ${arrowDisabledStyles}`}>
+         <span class={`select-none ${arrowBaseClass} ${arrowDisabledStyles}`}>
             Anterior
          </span>
       )
@@ -40,7 +43,7 @@ const arrowDisabledStyles =
          pageNumbers.map((num) => (
             <a
                href={`${basePath}/${num}`}
-               class={`px-4 py-1 rounded-md transition duration-150 ${
+               class={`px-4 py-1 select-none rounded-md transition duration-150 ${
                   current === num
                      ? "bg-azul-700 text-white font-bold border-2 border-white/20 pointer-events-none"
                      : "bg-azul-700/40 text-white/70 hover:bg-azul-700 hover:text-white"
@@ -55,11 +58,16 @@ const arrowDisabledStyles =
    <!-- Next button -->
    {
       next ? (
-         <a href={next} class={`${arrowBaseClass} ${arrowActiveStyles}`}>
+         <a
+            href={next}
+            class={`select-none ${arrowBaseClass} ${arrowActiveStyles}`}
+         >
             Próximo
          </a>
       ) : (
-         <span class={`${arrowBaseClass} ${arrowDisabledStyles}`}>Próximo</span>
+         <span class={`select-none ${arrowBaseClass} ${arrowDisabledStyles}`}>
+            Próximo
+         </span>
       )
    }
 </nav>

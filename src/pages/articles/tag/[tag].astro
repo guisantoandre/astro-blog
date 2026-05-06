@@ -20,11 +20,14 @@ export async function getStaticPaths() {
 ---
 
 <MainLayout bgColor="bg-azul-800" title={`#${Astro.props.tag}`}>
-   <h2 class="text-subtitle py-5 md:py-7">
-      Artigos com a tag #{Astro.props.tag}
-   </h2>
+   <div class="flex flex-col min-h-[calc(100vh-94px)]">
+      <h2 class="text-subtitle py-5 md:py-7">
+         Artigos com a tag #{Astro.props.tag}
+      </h2>
 
-   <Cards posts={Astro.props.posts} />
-
-   <Footer />
+      <div class="flex-1 py-7 md:py-10">
+         <Cards posts={Astro.props.posts} />
+      </div>
+      <Footer />
+   </div>
 </MainLayout>
