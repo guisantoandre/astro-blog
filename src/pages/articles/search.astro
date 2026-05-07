@@ -1,6 +1,7 @@
 ---
 export const prerender = false;
 import Cards from "../../components/Cards.astro";
+import Footer from "../../components/Footer.astro";
 import SearchForm from "../../components/SearchForm.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getAllArticles } from "../../utils";
@@ -16,7 +17,7 @@ const results = searchResults(allArticles, cleanQuery);
 ---
 
 <MainLayout title={cleanQuery ? `Busca: ${cleanQuery}` : "Faça uma busca"}>
-   <div class="container">
+   <div class="container flex flex-col min-h-[calc(100vh-94px)]">
       <h2 class="text-subtitle py-5 md:py-7">
          {cleanQuery ? `Resultados para: ${cleanQuery}` : "Faça uma busca"}
       </h2>
@@ -28,7 +29,11 @@ const results = searchResults(allArticles, cleanQuery);
             <p class="text-center text-white/40">Nenhum resultado encontrado</p>
          )
       }
+
+      <div class="flex-1">
+         <Cards posts={results} />
+      </div>
    </div>
 
-   <Cards posts={results} />
+   <Footer class="bg-azul-800" />
 </MainLayout>

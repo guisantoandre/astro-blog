@@ -23,7 +23,7 @@ const { title, tags, pubDate } = post.data;
 const { Content } = await render(post);
 ---
 
-<MainLayout bgColor="bg-azul-700">
+<MainLayout bgColor="bg-azul-700" title={title}>
    <div class="flex flex-col min-h-[calc(100vh-94px)]">
       <article class="container space-y-5 flex-1 py-7 md:py-10">
          <Btn title="Voltar" href="/articles" />

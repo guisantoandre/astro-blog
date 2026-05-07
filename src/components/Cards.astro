@@ -10,11 +10,10 @@ interface Props {
 
 const { articlesPerPage, posts: providedPosts } = Astro.props;
 
-// Só buscamos os artigos se 'posts' não for passado via props (ex: na Home)
+// If 'posts' is not passed via props, we get them (ex: from Home)
 const posts = providedPosts ?? (await getAllArticles());
 
-// Se articlesPerPage for passado, cortamos o array.
-// Se não (como na paginação), usamos o array inteiro que já veio cortado pelo Astro.
+// If 'articlesPerPage' is not passed via props, we get all the posts
 const displayPosts = articlesPerPage ? posts.slice(0, articlesPerPage) : posts;
 ---
 

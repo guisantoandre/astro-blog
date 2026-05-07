@@ -1,8 +1,18 @@
-<footer class="bg-azul-900">
+---
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+   class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<footer class={twMerge("bg-azul-900", className)}>
    <div class="container py-10 flex items-center justify-between">
       <img src="/symbol-logo.svg" alt="Astroblog Logo Símbolo" />
-      <p class="text-azul-700 hover:text-slate-700 duration-100">
-         Desenvolvido por <span class="font-semibold">Guilherme</span>
+      <p class="text-slate-700 hover:text-slate-600 duration-150">
+         Desenvolvido por <span class="font-semibold">Amplixel</span>
       </p>
    </div>
 </footer>
