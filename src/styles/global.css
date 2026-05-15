@@ -1,10 +1,9 @@
 @import "tailwindcss";
-@import "./fonts.css";
 
-@theme {
-   /* CUSTOM FONTS */
-   --font-sans: "Barlow", sans-serif;
-   --font-display: "Orbitron", sans-serif;
+/* CUSTOM FONTS */
+@theme inline {
+   --font-sans: var(--font-sans), sans-serif;
+   --font-display: var(--font-display), sans-serif;
 
    /* CUSTOM COLORS */
    --color-azul-900: #090b11;
